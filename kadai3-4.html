@@ -33,6 +33,16 @@
             // 商品購入の関数
             function buyItem(no) {
                 // ここにコードを書く
+                if (1>no || 8<no){
+                    console.log(no+"は無効な商品番号です。番号は1~8で指定してください");
+                    return;
+                }
+                console.log("商品番号:" + items [no-1].id +",商品名" + items [no-1].name);
+                if(items [no-1].stock > 0){
+                    items [no-1].stock = items [no-1] -1;
+                }else{
+                    console.log("在庫がありません");
+                }
                 showItemList(); // 商品一覧の表示関数呼び出し
             }
 
